@@ -7,7 +7,7 @@ Projeto desenvolvido durante treinamento Fullstack Master - DevPleno, com intuit
 As seguintes ferramentas foram usadas na construção do projeto:
 
 * [ExpressJS](https://expressjs.com/pt-br/) - Fast, unopinionated, minimalist web framework for Node.js.
-* [Apollo Graph QL](https://tailwindcss.com/) - Simplify app development by combining APIs, databases, and microservices into a single data graph that you can query with GraphQL
+* [Apollo Graph QL](https://www.apollographql.com/) - Simplify app development by combining APIs, databases, and microservices into a single data graph that you can query with GraphQL
 * [MySQL](https://www.mysql.com/) - The world's most popular open source database.
 
 ### Pré-requisitos
