@@ -1,0 +1,44 @@
+type Image {
+  id: Int
+  description: String
+  url: String
+}
+
+type Product {
+  id: Int
+  product: String
+  price: Float
+  images: [Image]
+}
+
+type Query {
+  getAllProducts(filter: ProductFilter): [Product]
+}
+
+type Mutation {
+  createProduct(input: InputProduct): Product
+  removeProduct(id: Int!): Boolean
+  updateProduct(id: Int!, input: InputProductUpdate): Boolean
+  createImageOnProduct(productId: Int!, input: InputCreateImageOnProduct): Boolean
+  removeImageOnProduct(id: Int!, productId: Int!): Boolean
+}
+
+input ProductFilter {
+  categoryId: Int
+}
+
+input InputProduct {
+  product: String!
+  price: Float!
+}
+
+input InputProductUpdate {
+  product: String
+  price: Float
+  categories: [Int]
+}
+
+input InputCreateImageOnProduct {
+  description: String
+  url: String
+}
