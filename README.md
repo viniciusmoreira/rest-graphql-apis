@@ -2,12 +2,15 @@
 
 Projeto desenvolvido durante treinamento Fullstack Master - DevPleno, com intuito de aprender a utilizar REST e GraphQL para elaboração de APIs.
 
+Obs: Adicionamos posteriorment a parte de autenticação e autorização.
+
 ### 🛠 Tecnologias
 
 As seguintes ferramentas foram usadas na construção do projeto:
 
 * [ExpressJS](https://expressjs.com/pt-br/) - Fast, unopinionated, minimalist web framework for Node.js.
 * [Apollo Graph QL](https://www.apollographql.com/) - Simplify app development by combining APIs, databases, and microservices into a single data graph that you can query with GraphQL
+* [JWT](https://jwt.io/) - JSON Web Tokens are an open, industry standard RFC 7519 method for representing claims securely between two parties.
 * [MySQL](https://www.mysql.com/) - The world's most popular open source database.
 
 ### Pré-requisitos

@@ -5,6 +5,8 @@ const graphqlServer = require('./graphql');
 const app = express();
 const PORT = process.env.SERVER_PORT || 3000;
 
+graphqlServer.applyMiddleware({ app });
+
 app.use(express.json())
 app.use(routes);
 
@@ -15,5 +17,3 @@ app.listen(PORT, err => {
     console.log(`Servidor iniciado com sucesso na porta ${PORT}`);
   }
 })
-
-graphqlServer.applyMiddleware({ app });

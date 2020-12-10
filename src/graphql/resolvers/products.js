@@ -2,7 +2,7 @@ const db = require('../../db');
 const productModel = require('../../models/product')(db);
 const { ApolloError } = require("apollo-server-express");
 
-const getAllProducts = async (context, { filter }) => {
+const getAllProducts = async (parent, { filter }, context) => {
   let products = null;
   
   if(filter && filter.categoryId)   {
@@ -15,7 +15,7 @@ const getAllProducts = async (context, { filter }) => {
 }
   
 
-const createProduct = async (context, {input}) => {
+const createProduct = async (parent, {input}, context) => {
   const { product, price } = input;
 
   const newProduct = await productModel.create([product, price])
@@ -23,12 +23,12 @@ const createProduct = async (context, {input}) => {
   return newProduct;
 }
 
-const removeProduct = async(context, { id }) => {
+const removeProduct = async(parent, { id }, context) => {
   const success = await productModel.remove(id);
   return success;
 }
 
-const updateProduct = async(context, { id, input }) => {
+const updateProduct = async(parent, { id, input }, context) => {
   let success = true;
   const productExists = await productModel.findById(productId);
 
@@ -51,7 +51,7 @@ const updateProduct = async(context, { id, input }) => {
   return success;
 }
 
-const createImageOnProduct = async (context, { productId, input }) => {
+const createImageOnProduct = async (parent, { productId, input }, context) => {
   const { description, url } = input;
   const productExists = await productModel.findById(productId);
 
@@ -65,7 +65,7 @@ const createImageOnProduct = async (context, { productId, input }) => {
   return success;
 }
 
-const removeImageOnProduct = async (context, { id, productId }) => {
+const removeImageOnProduct = async (parent, { id, productId }, context) => {
   const success = await productModel.removeImage(productId, id);
 
   return success;
